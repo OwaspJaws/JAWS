@@ -16,25 +16,23 @@
 	</properties>
 
 	<dependencies>
-
+	
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-        <dependency>
-            <groupId>commons-dbutils</groupId>
-            <artifactId>commons-dbutils</artifactId>
-            <version>1.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
-            <version>3.2</version>
-        </dependency>
-
-
-        <dependency>
+	        <dependency>
+		        <groupId>commons-dbutils</groupId>
+		        <artifactId>commons-dbutils</artifactId>
+		        <version>1.5</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.apache.commons</groupId>
+	            <artifactId>commons-math3</artifactId>
+	            <version>3.2</version>
+	        </dependency>
+        	<dependency>
 			<groupId>org.owasp</groupId>
 			<artifactId>csrfguard</artifactId>
 			<version>3.0.0</version>
@@ -125,29 +123,28 @@
 			<version>2.11.0</version>
 		</dependency>
 
-        <!-- Servlet API -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.el</groupId>
-            <artifactId>javax.el-api</artifactId>
-            <version>3.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.web</groupId>
-            <artifactId>el-impl</artifactId>
-            <version>2.2</version>
-            <scope>provided</scope>
-        </dependency>
+	        <!-- Servlet API -->
+	        <dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>servlet-api</artifactId>
+	            <version>2.5</version>
+	            <scope>provided</scope>
+	        </dependency>
+	        <dependency>
+	            <groupId>javax.el</groupId>
+	            <artifactId>javax.el-api</artifactId>
+	            <version>3.0.0</version>
+	            <scope>provided</scope>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.glassfish.web</groupId>
+	            <artifactId>el-impl</artifactId>
+	            <version>2.2</version>
+	            <scope>provided</scope>
+	        </dependency>
 
-
-		<!-- BEGIN: Log4j configuration - we cannot use logback because of esapi
-			:( -->
+		<!-- BEGIN: Log4j configuration - 
+		            We cannot use logback because of the use of OWASP ESAPI -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -159,8 +156,6 @@
 			<version>1.6.6</version>
 		</dependency>
 		<!-- END: Log4j configuration -->
-
-
 
 		<!-- JSR 303 reference implementation -->
 		<dependency>
