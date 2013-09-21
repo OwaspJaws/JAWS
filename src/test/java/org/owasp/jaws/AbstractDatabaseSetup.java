@@ -1,4 +1,4 @@
-package org.owasp;
+package org.owasp.jaws;
 
 import org.junit.Ignore;
 import org.junit.runner.RunWith;

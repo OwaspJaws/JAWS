@@ -1,11 +1,11 @@
-package org.owasp.good;
+package org.owasp.jaws.good;
 
 import org.apache.commons.dbutils.DbUtils;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.owasp.AbstractDatabaseSetup;
+import org.owasp.jaws.AbstractDatabaseSetup;
 import org.owasp.beans.Login;
 
 import java.sql.Connection;
