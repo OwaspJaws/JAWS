@@ -5,7 +5,7 @@ import org.owasp.beans.Login;
 import java.util.List;
 
 /**
- * User: massoo
+ * @author Sam Theys
  */
 public interface ILoginDAO {
 

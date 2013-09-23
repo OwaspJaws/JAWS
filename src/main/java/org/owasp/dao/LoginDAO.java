@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * User: massoo
+ * @author Sam Theys
  */
 @Repository
 @Transactional

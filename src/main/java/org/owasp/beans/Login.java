@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * User: massoo
+ * @author Sam Theys
  */
 @Entity
 @NamedQueries({

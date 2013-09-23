@@ -5,8 +5,8 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.owasp.jaws.AbstractDatabaseSetup;
 import org.owasp.beans.Login;
+import org.owasp.jaws.AbstractDatabaseSetup;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.not;
 
 /**
- * User: massoo
+ * @author Sam Theys
  */
 public class DatabaseTestCase extends AbstractDatabaseSetup {
 
