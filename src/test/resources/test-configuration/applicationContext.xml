@@ -42,7 +42,7 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>org.owasp.beans.Login</value>
+                <value>org.owasp.jaws.beans.Login</value>
             </list>
         </property>
     </bean>
