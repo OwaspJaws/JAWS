@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.owasp.jaws.AbstractDatabaseSetup;
-import org.owasp.jaws.beans.Login;
+import org.owasp.jaws.good.bean.Login;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

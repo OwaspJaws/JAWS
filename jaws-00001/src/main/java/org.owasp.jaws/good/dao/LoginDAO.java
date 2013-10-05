@@ -1,8 +1,8 @@
-package org.owasp.jaws.dao;
+package org.owasp.jaws.good.dao;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.owasp.jaws.beans.Login;
+import org.owasp.jaws.good.bean.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

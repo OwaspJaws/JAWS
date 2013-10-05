@@ -1,6 +1,6 @@
-package org.owasp.jaws.dao;
+package org.owasp.jaws.good.dao;
 
-import org.owasp.jaws.beans.Login;
+import org.owasp.jaws.good.bean.Login;
 
 import java.util.List;
 

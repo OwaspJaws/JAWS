@@ -12,6 +12,8 @@
     <groupId>org.owasp.jaws</groupId>
     <artifactId>jaws-00001</artifactId>
 
+    <packaging>war</packaging>
+
     <properties>
         <hibernate.version>4.1.5.Final</hibernate.version>
         <hibernate.validator.version>5.0.1.Final</hibernate.validator.version>
@@ -138,6 +140,34 @@
         </dependency>
         <!-- END: JSR 303 reference implementation -->
 
+
+
     </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- BEGIN: Jetty configuration -->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.26</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <contextPath>/</contextPath>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>STOP</stopKey>
+                    <stopPort>8005</stopPort>
+                </configuration>
+            </plugin>
+            <!-- END: Jetty configuration-->
+
+        </plugins>
+    </build>
 
 </project>

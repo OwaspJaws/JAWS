@@ -1,4 +1,4 @@
-package org.owasp.jaws.beans;
+package org.owasp.jaws.good.bean;
 
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
