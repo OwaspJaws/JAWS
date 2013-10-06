@@ -11,9 +11,28 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DefaultController {
 
-    @RequestMapping(method = RequestMethod.GET,value = "/index")
-    public ModelAndView homepage () {
-        return new ModelAndView("index");
+    @RequestMapping(method = RequestMethod.GET,value = "/")
+    public ModelAndView index() {
+        ModelAndView view = new ModelAndView("index");
+        view.addObject("navigation","index");
+
+        return view;
+    }
+
+    @RequestMapping(method = RequestMethod.GET,value = "/about")
+    public ModelAndView about() {
+        ModelAndView view = new ModelAndView("default/about");
+        view.addObject("navigation","about");
+
+        return view;
+    }
+
+    @RequestMapping(method = RequestMethod.GET,value = "/contact")
+    public ModelAndView contact() {
+        ModelAndView view = new ModelAndView("default/contact");
+        view.addObject("navigation","contact");
+
+        return view;
     }
 
 }

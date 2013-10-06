@@ -2,7 +2,7 @@
   @author Sam Theys
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../includes/header.jsp"%>
+<%@include file="../../includes/header.jsp"%>
 
         <div class="col-xs-12 col-sm-9">
             <p class="pull-right visible-xs">
@@ -12,13 +12,13 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Welcome to JAWS-00001</h3>
+                    <h3 class="panel-title">JAWS-00001 About</h3>
                 </div>
                 <div class="panel-body">
-                    enjoy !
+                    Something about the setup of this project here.
                 </div>
             </div>
 
         </div>
 
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../../includes/footer.jsp"%>
