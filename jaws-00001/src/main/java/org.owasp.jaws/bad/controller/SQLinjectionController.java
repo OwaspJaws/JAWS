@@ -1,4 +1,4 @@
-package org.owasp.jaws.good.controller;
+package org.owasp.jaws.bad.controller;
 
 import org.owasp.jaws.good.utility.Constants;
 import org.springframework.stereotype.Controller;
@@ -10,18 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Sam Theys
  */
 // TODO: handle method not supported exception
-@Controller(value = "good-sql-injection-controller")
+@Controller(value = "bad-sql-injection-controller")
 public class SQLinjectionController {
 
-    @RequestMapping(method = RequestMethod.GET,value = "/sql-injection")
-    public ModelAndView index() {
-        ModelAndView view = new ModelAndView("sql-injection/sql-injection");
-        view.addObject(Constants.NAVIGATION,Constants.NAVIGATION_SQL_INJECTION);
-
-        return view;
-    }
-
-    @RequestMapping(method = RequestMethod.POST,value = "/sql-injection/good-example")
+    @RequestMapping(method = RequestMethod.POST,value = "/sql-injection/bad-example")
     public ModelAndView goodExample() {
         ModelAndView view = new ModelAndView("sql-injection/sql-injection");
         view.addObject(Constants.NAVIGATION, Constants.NAVIGATION_SQL_INJECTION);

@@ -8,7 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * @author Sam Theys
  */
-@Controller
+// TODO: handle method not supported exception
+@Controller(value = "good-default-controller")
 public class DefaultController {
 
     @RequestMapping(method = RequestMethod.GET,value = "/")
