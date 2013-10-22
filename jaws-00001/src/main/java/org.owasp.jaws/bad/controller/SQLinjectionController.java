@@ -1,6 +1,6 @@
 package org.owasp.jaws.bad.controller;
 
-import org.owasp.jaws.good.utility.Constants;
+import org.owasp.jaws.good.utility.NavigationConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,10 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller(value = "bad-sql-injection-controller")
 public class SQLinjectionController {
 
-    @RequestMapping(method = RequestMethod.POST,value = "/sql-injection/bad-example")
-    public ModelAndView goodExample() {
-        ModelAndView view = new ModelAndView("sql-injection/sql-injection");
-        view.addObject(Constants.NAVIGATION, Constants.NAVIGATION_SQL_INJECTION);
+    @RequestMapping(method = RequestMethod.POST, value = NavigationConstants.INJECTION_SQL + NavigationConstants.BAD)
+    public ModelAndView badExample() {
+        ModelAndView view = new ModelAndView(NavigationConstants.INJECTION_SQL + NavigationConstants.INDEX);
+        view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.INJECTION_SQL);
 
         return view;
     }

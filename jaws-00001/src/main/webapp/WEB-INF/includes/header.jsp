@@ -3,6 +3,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="nav" class="org.owasp.jaws.good.utility.NavigationConstants" scope="session"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">OWASP JAWS</a>
+            <a class="navbar-brand" href="<c:url value="${nav.GENERIC_INDEX}" />">OWASP JAWS</a>
         </div>
 
         <%@include file="top-navigation.jsp"%>

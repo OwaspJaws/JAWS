@@ -2,7 +2,7 @@
   @author Sam Theys
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../includes/header.jsp"%>
+<%@include file="/WEB-INF/includes/header.jsp"%>
 
         <div class="col-xs-12 col-sm-9">
             <p class="pull-right visible-xs">
@@ -21,4 +21,4 @@
 
         </div>
 
-<%@include file="../includes/footer.jsp"%>
+<%@include file="/WEB-INF/includes/footer.jsp"%>
