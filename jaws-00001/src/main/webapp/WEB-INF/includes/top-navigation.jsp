@@ -14,4 +14,13 @@
             <a href="<c:url value="${nav.GENERIC_CONTACT}"/>">Contact</a>
         </li>
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span><b class="caret"></b></a>
+
+            <ul class="dropdown-menu">
+                <li><a href="/wip">Reset Database</a></li>
+            </ul>
+        </li>
+    </ul>
 </div>
