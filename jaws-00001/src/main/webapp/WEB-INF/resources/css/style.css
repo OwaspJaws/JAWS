@@ -20,6 +20,10 @@ h3 {
     font-size: 16px;
 }
 
+.tab-active {
+    border-color: #000000;
+}
+
 /*
 .example {
     padding-top:10px;
