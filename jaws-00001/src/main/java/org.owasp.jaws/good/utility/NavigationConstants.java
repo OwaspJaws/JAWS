@@ -11,7 +11,8 @@ public class NavigationConstants {
     public static final String INDEX = "/index";
     public static final String ERROR = "/error";
 
-    public static final String ERROR_NOTSUPPORTED = "/error/not-supported";
+    public static final String ERROR_METHOD_NOT_SUPPORTED = "/error/method-not-supported";
+    public static final String ERROR_PAGE_NOT_FOUND = "/error/page-not-found";
 
     public static final String GENERIC_INDEX = "/";
     public static final String GENERIC_ABOUT = "/generic/about";

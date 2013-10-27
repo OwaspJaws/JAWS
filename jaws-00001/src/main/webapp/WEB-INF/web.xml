@@ -35,5 +35,16 @@
         <welcome-file>index</welcome-file>
     </welcome-file-list>
 
+    <!-- Handling errors -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/pages/error/page-not-found.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/pages/error/generic-error.jsp</location>
+    </error-page>
+
 </web-app>
 

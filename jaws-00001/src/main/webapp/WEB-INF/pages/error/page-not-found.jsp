@@ -15,7 +15,7 @@
                     <h3 class="panel-title">Error</h3>
                 </div>
                 <div class="panel-body">
-                    Oops this method is not supported
+                    Oops we could not find the page you requested...
                 </div>
             </div>
 
