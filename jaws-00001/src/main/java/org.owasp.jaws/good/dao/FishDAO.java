@@ -56,7 +56,7 @@ public class FishDAO implements IFishDAO {
 
     @Override
     public Fish getFishByBreed(String breed) {
-        LOG.debug("Looking for breed: {}",breed);
+        LOG.debug("Looking for breed: {}", breed);
         Query query = getCurrentSession().createQuery(GET_FISH_BY_BREED)
                 .setString("breed", breed);
 

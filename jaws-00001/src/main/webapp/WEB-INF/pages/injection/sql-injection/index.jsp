@@ -21,8 +21,8 @@
             <div>
                 <form action="<c:url value="${nav.INJECTION_SQL}${nav.GOOD}"/>" method="post" role="form">
                     <div class="form-group">
-                        <label for="inputTerrorist">Prism search terrorist by email</label>
-                        <input type="text" class="form-control" id="inputTerrorist" name="terrorist" placeholder="Enter name">
+                        <label for="inputBreed">Search the fish database by breed</label>
+                        <input type="text" class="form-control" id="inputBreed" name="breed" placeholder="Enter a breed">
                     </div>
                     <button type="submit" name="search" value="search" class="btn btn-default">Search</button>
                     <%@include file="results.jsp" %>
@@ -33,8 +33,8 @@
             <div>
                 <form action="<c:url value="${nav.INJECTION_SQL}${nav.BAD}"/>" method="post" role="form">
                     <div class="form-group">
-                        <label for="inputTerrorist">Prism search terrorist by email</label>
-                        <input type="text" class="form-control" id="inputTerrorist" name="terrorist" placeholder="Enter name">
+                        <label for="inputBreed">Search the fish database by breed</label>
+                        <input type="text" class="form-control" id="inputBreed" name="breed" placeholder="Enter a breed">
                     </div>
                     <button type="submit" name="search" value="search" class="btn btn-default">Search</button>
                     <%@include file="results.jsp" %>
@@ -46,7 +46,7 @@
             <h3 class="panel-title">Documentation</h3>
         </div>
         <div class="panel-body">
-            Documentation here
+            The following breeds are in the database: Spiny dogfish, Blacktailed spurdog and Horn shark
         </div>
     </div>
     <div class="panel panel-info">

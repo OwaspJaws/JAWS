@@ -3,29 +3,26 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
+        <th>Breed</th>
+        <th>Price</th>
     </tr>
     </thead>
     <tbody>
+    <c:if test="${not empty goodFish}">
     <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>${goodFish.id}</td>
+        <td>${goodFish.breed}</td>
+        <td>${goodFish.price}</td>
     </tr>
-    <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-    </tr>
+    </c:if>
+    <c:if test="${not empty badFishList}">
+        <c:forEach var="badFish" items="${badFishList}">
+            <tr>
+                <td>${badFish.id}</td>
+                <td>${badFish.breed}</td>
+                <td>${badFish.price}</td>
+            </tr>
+        </c:forEach>
+    </c:if>
     </tbody>
 </table>
