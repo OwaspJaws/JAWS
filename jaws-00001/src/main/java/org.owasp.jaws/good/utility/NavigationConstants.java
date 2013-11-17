@@ -6,6 +6,7 @@ package org.owasp.jaws.good.utility;
 public class NavigationConstants {
 
     public static final String NAVIGATION = "navigation";
+    public static final String TAB = "tab";
     public static final String GOOD = "/good-example";
     public static final String BAD = "/bad-example";
     public static final String INDEX = "/index";

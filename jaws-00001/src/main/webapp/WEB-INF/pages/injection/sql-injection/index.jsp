@@ -9,15 +9,15 @@
         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
     </p>
     <div style="clear:both; width: 0; height: 0">&nbsp;</div>
-    <a href="#good" data-toggle="tab">
-        <div class="col-xs-6 alert alert-success text-center tab-active">Good</div>
+    <a href="<c:url value="${nav.INJECTION_SQL}${nav.GOOD}"/>" >
+        <div class="col-xs-6 alert alert-success text-center <c:if test="${nav.GOOD eq tab}">tab-active</c:if>">Good</div>
     </a>
-    <a href="#bad" data-toggle="tab">
-        <div class="col-xs-6 alert alert-danger text-center">Bad</div>
+    <a href="<c:url value="${nav.INJECTION_SQL}${nav.BAD}"/>">
+        <div class="col-xs-6 alert alert-danger text-center <c:if test="${nav.BAD eq tab}">tab-active</c:if>">Bad</div>
     </a>
     <div class="tab-content">
         <!-- TODO: make clear distinction when good/bad sample is chosen by a user -->
-        <div class="tab-pane active" id="good">
+        <div class="tab-pane <c:if test="${nav.GOOD eq tab}">active</c:if>" id="good">
             <div>
                 <form action="<c:url value="${nav.INJECTION_SQL}${nav.GOOD}"/>" method="post" role="form">
                     <div class="form-group">
@@ -29,7 +29,7 @@
                 </form>
             </div>
         </div>
-        <div class="tab-pane" id="bad">
+        <div class="tab-pane <c:if test="${nav.BAD eq tab}">active</c:if>" id="bad">
             <div>
                 <form action="<c:url value="${nav.INJECTION_SQL}${nav.BAD}"/>" method="post" role="form">
                     <div class="form-group">
