@@ -37,17 +37,15 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.hbm2ddl.import_files">/sql/database.sql</prop>
             </props>
         </property>
-        <!--
         <property name="annotatedClasses">
             <list>
-                <value>org.owasp.jaws.good.bean.Login</value>
+                <value>org.owasp.jaws.good.bean.Fish</value>
             </list>
         </property>
-        -->
     </bean>
 
     <tx:annotation-driven transaction-manager="txManager"/>
