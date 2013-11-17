@@ -19,10 +19,11 @@ public class SQLInjectionController {
     @Autowired
     private IFishDAO goodFishDAO;
 
-    @RequestMapping(method = RequestMethod.GET, value = NavigationConstants.INJECTION_SQL)
+    @RequestMapping(method = RequestMethod.GET, value = {NavigationConstants.INJECTION_SQL,NavigationConstants.INJECTION_SQL+NavigationConstants.GOOD})
     public ModelAndView index() {
         ModelAndView view = new ModelAndView(NavigationConstants.INJECTION_SQL + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.INJECTION_SQL);
+        view.addObject(NavigationConstants.TAB,NavigationConstants.GOOD);
 
         return view;
     }
@@ -34,6 +35,7 @@ public class SQLInjectionController {
 
         ModelAndView view = new ModelAndView(NavigationConstants.INJECTION_SQL + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.INJECTION_SQL);
+        view.addObject(NavigationConstants.TAB,NavigationConstants.GOOD);
         view.addObject("goodFish",fish);
 
         return view;
