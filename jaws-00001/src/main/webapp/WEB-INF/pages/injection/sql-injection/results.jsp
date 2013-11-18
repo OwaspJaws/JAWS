@@ -26,3 +26,6 @@
     </c:if>
     </tbody>
 </table>
+<c:if test="${empty goodFish and empty badFishList}">
+<div>No data selected</div>
+</c:if>
