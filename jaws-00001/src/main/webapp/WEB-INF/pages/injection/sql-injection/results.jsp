@@ -9,11 +9,11 @@
     </thead>
     <tbody>
     <c:if test="${not empty goodFish}">
-    <tr>
-        <td>${goodFish.id}</td>
-        <td>${goodFish.breed}</td>
-        <td>${goodFish.price}</td>
-    </tr>
+        <tr>
+            <td>${goodFish.id}</td>
+            <td>${goodFish.breed}</td>
+            <td>${goodFish.price}</td>
+        </tr>
     </c:if>
     <c:if test="${not empty badFishList}">
         <c:forEach var="badFish" items="${badFishList}">

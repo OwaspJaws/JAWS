@@ -26,7 +26,6 @@ public class NavigationConstants {
     public static final String XSS_DOM = "/cross-site-scripting/dom";
 
 
-
     /**
      * Getters are needed so that we can access the constants as beans in JSP
      */
@@ -43,11 +42,11 @@ public class NavigationConstants {
         return GENERIC_CONTACT;
     }
 
-    public  String getINJECTION_SQL() {
+    public String getINJECTION_SQL() {
         return INJECTION_SQL;
     }
 
-    public  String getINJECTION_LDAP() {
+    public String getINJECTION_LDAP() {
         return INJECTION_LDAP;
     }
 
@@ -66,7 +65,6 @@ public class NavigationConstants {
     public String getBAD() {
         return BAD;
     }
-
 
 
 }

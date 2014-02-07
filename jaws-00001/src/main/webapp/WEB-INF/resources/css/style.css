@@ -3,19 +3,23 @@
  * --------------------------------------------------
  */
 body {
-  padding-top: 70px;
-  font-size: 14px;
+    padding-top: 70px;
+    font-size: 14px;
 }
+
 footer {
-  padding-left: 15px;
-  padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
+
 h1 {
     font-size: 20px;
 }
+
 h2 {
     font-size: 18px;
 }
+
 h3 {
     font-size: 16px;
 }
@@ -35,10 +39,11 @@ h3 {
 */
 
 .panel-primary {
-    margin-top:30px;
+    margin-top: 30px;
 }
+
 .panel-info {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 /*
@@ -46,34 +51,34 @@ h3 {
  * --------------------------------------------------
  */
 @media screen and (max-width: 768px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
-  }
+    .row-offcanvas-right
+    .sidebar-offcanvas {
+        right: -50%; /* 6 columns */
+    }
 
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
-  }
+    .row-offcanvas-left
+    .sidebar-offcanvas {
+        left: -50%; /* 6 columns */
+    }
 
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
-  }
+    .row-offcanvas-right.active {
+        right: 50%; /* 6 columns */
+    }
 
-  .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
-  }
+    .row-offcanvas-left.active {
+        left: 50%; /* 6 columns */
+    }
 
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 50%; /* 6 columns */
-  }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 50%; /* 6 columns */
+    }
 }

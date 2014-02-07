@@ -9,14 +9,16 @@ import java.util.List;
  */
 public interface IFishDAO {
 
-    public List<Fish> getFishes();
+    List<Fish> getFishes();
 
-    public void insert(Fish fish);
-    public void update(Fish fish);
-    public void deleteAllFishes();
+    void insert(Fish fish);
 
-    public Fish getFishById(long id);
+    void update(Fish fish);
 
-    public List<Fish> getFishByBreed(String breed);
+    void deleteAllFishes();
+
+    Fish getFishById(long id);
+
+    List<Fish> getFishByBreed(String breed);
 
 }

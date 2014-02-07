@@ -4,8 +4,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.owasp.jaws.good.dao.IFishDAO;
 import org.owasp.jaws.good.bean.Fish;
+import org.owasp.jaws.good.dao.IFishDAO;
 import org.owasp.jaws.good.utility.EncoderWrapper;
 import org.owasp.jaws.setup.AbstractXSSSetup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class XSSTestCase extends AbstractXSSSetup {
     @After
     public void doAfter() {
         if (xssCount > 0) {
-            String message = String.format("Some XSS issues are not neutralized: %s vs %s !", xssCount,xssFish);
+            String message = String.format("Some XSS issues are not neutralized: %s vs %s !", xssCount, xssFish);
             Assert.fail(message);
         }
     }
@@ -42,7 +42,7 @@ public class XSSTestCase extends AbstractXSSSetup {
         Fish contaminatedFish = badFishDAO.getFishById(id);
         String outputOnTheWebsite = throwTheFishOnTheLand(contaminatedFish.getBreed());
 
-        LOG.info("Comparing for XSS: {} and {}",outputOnTheWebsite,contaminatedFish.getBreed());
+        LOG.info("Comparing for XSS: {} and {}", outputOnTheWebsite, contaminatedFish.getBreed());
 
         if (outputOnTheWebsite.equals(contaminatedFish.getBreed())) {
             xssCount = 1;

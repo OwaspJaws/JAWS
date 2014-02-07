@@ -1,12 +1,12 @@
 package org.owasp.jaws.bad.dao;
 
 import org.apache.commons.dbutils.BeanProcessor;
+import org.apache.commons.dbutils.DbUtils;
 import org.owasp.jaws.good.exception.FatalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Query;
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public abstract class BadDAO {
 
-    protected Logger LOG = LoggerFactory.getLogger(BadDAO.class);
+    private final Logger LOG = LoggerFactory.getLogger(BadDAO.class);
 
     @Autowired
     private DataSource dataSource;
@@ -28,12 +28,24 @@ public abstract class BadDAO {
         return beanProcessor;
     }
 
+    protected Logger getLog() {
+        return LOG;
+    }
+
     protected Statement getStatement() {
 
         try {
             return dataSource.getConnection().createStatement();
         } catch (SQLException ex) {
             throw new FatalException("Can't create SQL Statement !", ex);
+        } finally {
+            try {
+                if (dataSource != null) {
+                    DbUtils.closeQuietly(dataSource.getConnection());
+                }
+            } catch (SQLException ex) {
+                // give up
+            }
         }
 
     }
@@ -71,9 +83,9 @@ public abstract class BadDAO {
         }
     }
 
-    protected <T> T toBean(ResultSet resultSet,Class clazz) {
+    protected <T> T toBean(ResultSet resultSet, Class clazz) {
         try {
-            return (T) getBeanProcessor().toBean(resultSet,clazz);
+            return (T) getBeanProcessor().toBean(resultSet, clazz);
         } catch (SQLException ex) {
             LOG.error("Error processing ResulSet to bean", ex);
             return null;
@@ -102,7 +114,7 @@ public abstract class BadDAO {
             resultSet.next();
             return resultSet;
         } catch (SQLException ex) {
-            LOG.error("Can't set ResultSet to first row!",ex);
+            LOG.error("Can't set ResultSet to first row!", ex);
             return null;
         }
     }

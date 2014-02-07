@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller(value = "good-default-controller")
 public class DefaultController {
 
-    @RequestMapping(method = RequestMethod.GET,value = NavigationConstants.GENERIC_INDEX)
+    @RequestMapping(method = RequestMethod.GET, value = NavigationConstants.GENERIC_INDEX)
     public ModelAndView index() {
         ModelAndView view = new ModelAndView(NavigationConstants.GENERIC_INDEX + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.GENERIC_INDEX);
@@ -21,7 +21,7 @@ public class DefaultController {
         return view;
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = NavigationConstants.GENERIC_ABOUT)
+    @RequestMapping(method = RequestMethod.GET, value = NavigationConstants.GENERIC_ABOUT)
     public ModelAndView about() {
         ModelAndView view = new ModelAndView(NavigationConstants.GENERIC_ABOUT);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.GENERIC_ABOUT);
@@ -29,7 +29,7 @@ public class DefaultController {
         return view;
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = NavigationConstants.GENERIC_CONTACT)
+    @RequestMapping(method = RequestMethod.GET, value = NavigationConstants.GENERIC_CONTACT)
     public ModelAndView contact() {
         ModelAndView view = new ModelAndView(NavigationConstants.GENERIC_CONTACT);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.GENERIC_CONTACT);

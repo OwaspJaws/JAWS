@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:component-scan base-package="org.owasp"/>
-    <context:annotation-config />
+    <context:annotation-config/>
     <mvc:annotation-driven/>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -52,7 +52,7 @@
 
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
-    <bean id="txManager"  class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>

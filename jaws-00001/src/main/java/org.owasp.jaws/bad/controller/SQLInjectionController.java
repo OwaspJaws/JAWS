@@ -25,7 +25,7 @@ public class SQLInjectionController {
     public ModelAndView index() {
         ModelAndView view = new ModelAndView(NavigationConstants.INJECTION_SQL + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.INJECTION_SQL);
-        view.addObject(NavigationConstants.TAB,NavigationConstants.BAD);
+        view.addObject(NavigationConstants.TAB, NavigationConstants.BAD);
 
         return view;
     }
@@ -37,8 +37,8 @@ public class SQLInjectionController {
 
         ModelAndView view = new ModelAndView(NavigationConstants.INJECTION_SQL + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.INJECTION_SQL);
-        view.addObject(NavigationConstants.TAB,NavigationConstants.BAD);
-        view.addObject("badFishList",fishList);
+        view.addObject(NavigationConstants.TAB, NavigationConstants.BAD);
+        view.addObject("badFishList", fishList);
 
         return view;
     }

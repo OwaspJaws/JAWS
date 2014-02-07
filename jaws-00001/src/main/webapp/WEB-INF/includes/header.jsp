@@ -39,7 +39,7 @@
             <a class="navbar-brand" href="<c:url value="${nav.GENERIC_INDEX}" />">OWASP JAWS</a>
         </div>
 
-        <%@include file="top-navigation.jsp"%>
+        <%@include file="top-navigation.jsp" %>
 
         <!-- /.nav-collapse -->
     </div>
@@ -52,4 +52,4 @@
     <div class="row row-offcanvas row-offcanvas-right">
 
 
-<%@include file="navigation.jsp"%>
+<%@include file="navigation.jsp" %>

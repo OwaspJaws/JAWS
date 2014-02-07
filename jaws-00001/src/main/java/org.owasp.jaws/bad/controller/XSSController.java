@@ -6,5 +6,4 @@ package org.owasp.jaws.bad.controller;
 public class XSSController {
 
 
-
 }

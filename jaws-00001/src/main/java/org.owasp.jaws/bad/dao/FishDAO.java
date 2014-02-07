@@ -4,10 +4,8 @@ import org.owasp.jaws.good.bean.Fish;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Query;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -20,6 +18,7 @@ public class FishDAO extends BadDAO implements IFishDAO {
     @Override
     public List<Fish> getFishes() {
         ResultSet resultSet = executeQuery("SELECT * FROM fish");
+
         if (resultSet != null) {
             return toBeanList(resultSet, Fish.class);
         } else {
@@ -52,7 +51,7 @@ public class FishDAO extends BadDAO implements IFishDAO {
         resultSet = setResultSetToFirstRow(resultSet);
 
         if (resultSet != null) {
-            return toBean(resultSet,Fish.class);
+            return toBean(resultSet, Fish.class);
         } else {
             return null;
         }
@@ -60,11 +59,10 @@ public class FishDAO extends BadDAO implements IFishDAO {
 
     @Override
     public List<Fish> getFishByBreed(String breed) {
-        LOG.debug("Looking for breed: {}", breed);
+        getLog().debug("Looking for breed: {}", breed);
         ResultSet resultSet = executeQuery("SELECT * FROM fish where breed = '" + breed + "'");
         if (resultSet != null) {
-            List<Fish> fishList = toBeanList(resultSet, Fish.class);
-            return fishList;
+            return toBeanList(resultSet, Fish.class);
         } else {
             return null;
         }

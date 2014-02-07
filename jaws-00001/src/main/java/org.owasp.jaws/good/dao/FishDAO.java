@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.TypedQuery;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -61,7 +58,7 @@ public class FishDAO implements IFishDAO {
     @Override
     public Fish getFishById(long id) {
         Query fishQuery = getCurrentSession().createQuery(GET_FISH_BY_ID);
-        fishQuery.setLong("id",id);
+        fishQuery.setLong("id", id);
 
         return (Fish) fishQuery.uniqueResult();
     }

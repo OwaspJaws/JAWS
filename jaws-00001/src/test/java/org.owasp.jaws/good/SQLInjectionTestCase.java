@@ -3,9 +3,9 @@ package org.owasp.jaws.good;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
-import org.owasp.jaws.setup.AbstractSQLInjectionSetup;
 import org.owasp.jaws.good.bean.Fish;
 import org.owasp.jaws.good.dao.IFishDAO;
+import org.owasp.jaws.setup.AbstractSQLInjectionSetup;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
