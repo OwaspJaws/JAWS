@@ -5,3 +5,4 @@ DELETE FROM fish;
 INSERT INTO fish VALUES (null,'Spiny dogfish','100.01');
 INSERT INTO fish VALUES (null,'Blacktailed spurdog','200.02');
 INSERT INTO fish VALUES (null,'Horn shark','300.03');
+INSERT INTO fish VALUES (null, '<script>poked by the Horn Shark</script>','199.20');

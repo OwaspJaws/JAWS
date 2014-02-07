@@ -15,6 +15,8 @@ public interface IFishDAO {
     public void update(Fish fish);
     public void deleteAllFishes();
 
+    public Fish getFishById(long id);
+
     public Fish getFishByBreed(String breed);
 
 }

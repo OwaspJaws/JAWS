@@ -4,7 +4,10 @@ import org.owasp.jaws.good.bean.Fish;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Query;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -38,6 +41,21 @@ public class FishDAO extends BadDAO implements IFishDAO {
     public void deleteAllFishes() {
         String query = "DELETE * FROM fish";
         execute(query);
+    }
+
+    @Override
+    public Fish getFishById(long id) {
+        PreparedStatement preparedStatement = getPreparedStatement("select * from fish where id = ?");
+        preparedStatementSetLong(preparedStatement, 1, id);
+
+        ResultSet resultSet = executePreparedStatement(preparedStatement);
+        resultSet = setResultSetToFirstRow(resultSet);
+
+        if (resultSet != null) {
+            return toBean(resultSet,Fish.class);
+        } else {
+            return null;
+        }
     }
 
     @Override

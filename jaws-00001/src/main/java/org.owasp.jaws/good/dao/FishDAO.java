@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.TypedQuery;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -24,6 +27,7 @@ public class FishDAO implements IFishDAO {
     private static String GET_FISHES = "FROM Fish";
     private static String DELETE_FISHES = "DELETE FROM Fish";
     private static String GET_FISH_BY_BREED = "FROM Fish f where f.breed = :breed";
+    private static String GET_FISH_BY_ID = "FROM Fish f where f.id = :id";
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -52,6 +56,14 @@ public class FishDAO implements IFishDAO {
     public void deleteAllFishes() {
         Query query = getCurrentSession().createQuery(DELETE_FISHES);
         query.executeUpdate();
+    }
+
+    @Override
+    public Fish getFishById(long id) {
+        Query fishQuery = getCurrentSession().createQuery(GET_FISH_BY_ID);
+        fishQuery.setLong("id",id);
+
+        return (Fish) fishQuery.uniqueResult();
     }
 
     @Override
