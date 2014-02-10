@@ -28,16 +28,6 @@ h3 {
     border-color: #000000;
 }
 
-/*
-.example {
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:5px;
-    padding-right: 5px;
-    background-color: #d9edf7;
-}
-*/
-
 .panel-primary {
     margin-top: 30px;
 }
@@ -81,4 +71,8 @@ h3 {
         top: 0;
         width: 50%; /* 6 columns */
     }
+}
+
+.clear {
+    clear: both;
 }

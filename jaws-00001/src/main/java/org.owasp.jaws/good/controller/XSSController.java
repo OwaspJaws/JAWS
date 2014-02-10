@@ -1,6 +1,6 @@
-package org.owasp.jaws.bad.controller;
+package org.owasp.jaws.good.controller;
 
-import org.owasp.jaws.bad.dao.IFishDAO;
+import org.owasp.jaws.good.dao.IFishDAO;
 import org.owasp.jaws.good.bean.Fish;
 import org.owasp.jaws.good.utility.NavigationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +14,20 @@ import java.util.List;
 /**
  * @author Sam Theys
  */
-@Controller(value = "bad-cross-site-scripting-controller")
+@Controller(value = "good-cross-site-scripting-controller")
 public class XSSController {
 
     @Autowired
-    private IFishDAO badFishDAO;
+    private IFishDAO goodFishDAO;
 
-    @RequestMapping(method = RequestMethod.GET, value = NavigationConstants.XSS_STORED + NavigationConstants.BAD)
+    @RequestMapping(method = RequestMethod.GET, value = {NavigationConstants.XSS_STORED,NavigationConstants.XSS_STORED + NavigationConstants.GOOD})
     public ModelAndView index() {
-        List<Fish> fishList = badFishDAO.getFishes();
+        List<Fish> fishList = goodFishDAO.getFishes();
 
         ModelAndView view = new ModelAndView(NavigationConstants.XSS_STORED + NavigationConstants.INDEX);
         view.addObject(NavigationConstants.NAVIGATION, NavigationConstants.XSS_STORED);
-        view.addObject(NavigationConstants.TAB, NavigationConstants.BAD);
-        view.addObject("badFishList", fishList);
+        view.addObject(NavigationConstants.TAB, NavigationConstants.GOOD);
+        view.addObject("goodFishList", fishList);
 
         return view;
     }

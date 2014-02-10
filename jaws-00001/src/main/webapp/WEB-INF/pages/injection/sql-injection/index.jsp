@@ -18,7 +18,6 @@
     </a>
 
     <div class="tab-content">
-        <!-- TODO: make clear distinction when good/bad sample is chosen by a user -->
         <div class="tab-pane <c:if test="${nav.GOOD eq tab}">active</c:if>" id="good">
             <div>
                 <form action="<c:url value="${nav.INJECTION_SQL}${nav.GOOD}"/>" method="post" role="form">

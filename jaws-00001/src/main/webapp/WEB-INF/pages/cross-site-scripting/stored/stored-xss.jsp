@@ -20,9 +20,9 @@
     <c:if test="${not empty badFishList}">
         <c:forEach var="badFish" items="${badFishList}">
             <tr>
-                <td><esapi:encodeForHTML>${badFish.id}</esapi:encodeForHTML></td>
-                <td><esapi:encodeForHTML>${badFish.breed}</esapi:encodeForHTML></td>
-                <td><esapi:encodeForHTML>${badFish.price}</esapi:encodeForHTML></td>
+                <td>${badFish.id}</td>
+                <td>${badFish.breed}</td>
+                <td>${badFish.price}</td>
             </tr>
         </c:forEach>
     </c:if>

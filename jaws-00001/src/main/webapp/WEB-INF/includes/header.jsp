@@ -3,6 +3,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="esapi" uri="http://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API" %>
 <jsp:useBean id="nav" class="org.owasp.jaws.good.utility.NavigationConstants" scope="session"/>
 <!DOCTYPE html>
 <html lang="en">

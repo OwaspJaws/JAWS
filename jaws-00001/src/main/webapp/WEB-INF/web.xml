@@ -35,6 +35,14 @@
         <welcome-file>index</welcome-file>
     </welcome-file-list>
 
+    <!-- Issue with OWASP ESAPI, had to add the taglib manually -->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API</taglib-uri>
+            <taglib-location>/WEB-INF/tld/esapi.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
     <!-- Handling errors -->
     <error-page>
         <error-code>404</error-code>

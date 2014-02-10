@@ -3612,7 +3612,8 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .tab-content > .tab-pane, .pill-content > .pill-pane {
-    display: none
+    display: none;
+    clear: both;
 }
 
 .tab-content > .active, .pill-content > .active {
