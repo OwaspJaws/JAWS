@@ -8,14 +8,12 @@
     </tr>
     </thead>
     <tbody>
-    <c:if test="${not empty goodFishList}">
-        <c:forEach var="goodFish" items="${goodFishList}">
+    <c:if test="${not empty goodFish}">
             <tr>
                 <td><esapi:encodeForHTML>${goodFish.id}</esapi:encodeForHTML></td>
                 <td><esapi:encodeForHTML>${goodFish.breed}</esapi:encodeForHTML></td>
                 <td><esapi:encodeForHTML>${goodFish.price}</esapi:encodeForHTML></td>
             </tr>
-        </c:forEach>
     </c:if>
     <c:if test="${not empty badFishList}">
         <c:forEach var="badFish" items="${badFishList}">

@@ -27,7 +27,9 @@
                                placeholder="Enter a breed">
                     </div>
                     <button type="submit" name="search" value="search" class="btn btn-default">Search</button>
-                    <%@include file="results.jsp" %>
+                    <c:if test="${nav.GOOD eq tab}">
+                        <%@include file="results.jsp" %>
+                    </c:if>
                 </form>
             </div>
         </div>
@@ -40,7 +42,9 @@
                                placeholder="Enter a breed">
                     </div>
                     <button type="submit" name="search" value="search" class="btn btn-default">Search</button>
-                    <%@include file="results.jsp" %>
+                    <c:if test="${nav.BAD eq tab}">
+                        <%@include file="results.jsp" %>
+                    </c:if>
                 </form>
             </div>
         </div>
