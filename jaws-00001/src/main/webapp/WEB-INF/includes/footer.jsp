@@ -8,7 +8,7 @@
 <hr>
 
 <footer>
-    <p>&copy; OWASP 2013</p>
+    <p>&copy; OWASP 2013-2014</p>
 </footer>
 
 </div>
