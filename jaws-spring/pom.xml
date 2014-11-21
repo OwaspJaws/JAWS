@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <artifactId>jaws</artifactId>
         <groupId>org.owasp.jaws</groupId>
+        <artifactId>jaws</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <modelVersion>4.0.0</modelVersion>
     <groupId>org.owasp.jaws</groupId>
-    <artifactId>jaws-00001</artifactId>
-
-    <packaging>war</packaging>
+    <artifactId>jaws-spring</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <hibernate.version>4.1.5.Final</hibernate.version>
         <hibernate.validator.version>5.0.1.Final</hibernate.validator.version>
-        <spring.version>3.2.3.RELEASE</spring.version>
         <hsqldb.version>2.2.9</hsqldb.version>
     </properties>
 
-    <dependencies>
+    <modules>
+        <module>jaws-00001</module>
+        <module>jaws-00002</module>
+    </modules>
 
+    <dependencies>
         <!-- BEGIN: Spring 3 dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
             <exclusions>
                 <!-- BEGIN: Exclude Commons Logging in favor of SLF4j -->
                 <exclusion>
@@ -50,12 +50,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hsqldb</groupId>
@@ -70,7 +68,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -139,33 +136,31 @@
             <version>${hibernate.validator.version}</version>
         </dependency>
         <!-- END: JSR 303 reference implementation -->
-
-
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.0.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
-
-            <!-- BEGIN: Jetty configuration -->
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.26</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
-                    <connectors>
-                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8080</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
-                    <contextPath>/</contextPath>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <stopKey>STOP</stopKey>
-                    <stopPort>8005</stopPort>
+                    <port>9000</port>
+                    <tempWebappDirectory>${basedir}/target/site</tempWebappDirectory>
                 </configuration>
             </plugin>
-            <!-- END: Jetty configuration-->
-
         </plugins>
     </build>
 

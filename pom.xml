@@ -9,8 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>jaws-00001</module>
-        <module>jaws-00002</module>
+        <module>jaws-spring</module>
     </modules>
 
 	<dependencies>

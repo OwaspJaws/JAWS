@@ -54,7 +54,7 @@
 
     <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory">        	
-            <ref local="sessionFactory"/>
+            <ref bean="sessionFactory"/>
         </property>
     </bean>
 
