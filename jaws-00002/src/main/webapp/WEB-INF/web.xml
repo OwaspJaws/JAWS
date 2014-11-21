@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>jaws-00001</display-name>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:configuration/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>InputValidationFilter</filter-name>
+        <filter-class>org.owasp.jaws.good.validation.InputValidationFilter</filter-class>
+    </filter>
+
+    <!-- this way we are able to protect all good examples -->
+    <!--
+        TODO: change the way of the web application so only good / bad examples urls exist
+        At the moment it's possible to have a good-example without the part in the url
+    -->
+    <filter-mapping>
+        <filter-name>InputValidationFilter</filter-name>
+        <url-pattern>*/good-example</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:configuration/mvn-dispatcher-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
+
+    <!-- Issue with OWASP ESAPI, had to add the taglib manually -->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API</taglib-uri>
+            <taglib-location>/WEB-INF/tld/esapi.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+    <!-- Handling errors -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/pages/error/page-not-found.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/pages/error/generic-error.jsp</location>
+    </error-page>
+
+</web-app>
+
